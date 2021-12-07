@@ -1,0 +1,19 @@
+[package]
+name = "test-157"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["macros"] }
+serde = { version = "1", features = ["derive"] }
+
+[dependencies.warp]
+version = "0.3.2"
+default-features = false
+
+[profile.dev]
+lto = "off"
+codegen-units = 16
+incremental = true
+rpath = false
+split-debuginfo = "unpacked"
